@@ -1,4 +1,4 @@
-<a href="assets/simp.ps"><img align="left" alt="simp.ps" src="assets/simp.svg" width="200" /></a>
+<a href="assets/sim.ps"><img align="left" alt="sim.ps" src="assets/simp.svg" width="200" /></a>
 
 # PostScript snippets that I gone and dun.
 
