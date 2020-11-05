@@ -2,6 +2,8 @@
 
 # PostScript snippets that I gone and dun.
 
+Because who doesn't love a good `gs -sDEVICE=txtwrite -sOutputFile=- -q -sBATCH -dNOPAUSE -dNOSAFER *.ps`…?
+
 <br clear="both" />
 
 ### [`asciify.ps`](asciify.ps)
