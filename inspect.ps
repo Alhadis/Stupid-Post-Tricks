@@ -129,3 +129,9 @@
 >> def
 
 /=== Inspect /call get def
+
+/istack {
+	count array astore dup
+	[exch aload pop 2 1 counttomark 2 sub {-1 roll} for]
+	{===} forall aload pop
+} bind def

@@ -1,0 +1,11 @@
+%!PS
+
+% Retrieve the last element of an array
+/last {
+	dup length 1 sub get
+} bind def
+
+% Return a copy of an array in reverse order
+/rev {
+	[exch aload pop 2 1 counttomark 2 sub {-1 roll} for]
+} bind def
