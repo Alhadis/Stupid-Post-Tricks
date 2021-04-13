@@ -44,10 +44,14 @@ Using ===
 ### [`lists.ps`](lists.ps)
 Despite being a stack-based language, PostScript has surprisingly limited functions for manipulating arrays and lists.<a name="ref-1" href="#fn-1"><sup>[1]</sup></a> Those I deem missing will eventually find their way into this file.
 
+<!-- TODO: Find a way to generate the following mess. Preferably using Roff. -->
 
+
 ##### Array manipulation
 
-<dl><dt><a name="last"><var><samp>array</samp></var>&nbsp;<dfn><code>last</code></dfn>&nbsp;<var><samp>any</samp></var></a></dt>
+<!-- last -->
+<dl><dt><var><samp>array</samp></var>&nbsp;<a name="last"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/b69ef0dd8a1d6ef4e8b0ee120e1b444966b885a7/lists.ps#L7-L10"><dfn><code>last</code></dfn></a>&nbsp;<var><samp>any</samp></var></dt>
 <dd>Retrieve the last element of an array:
 
 ```postscript
@@ -57,7 +61,9 @@ last % => 1
 
 </dd>
 
-<dt><a name="rev"><var><samp>array</samp></var>&nbsp;<dfn><code>rev</code></dfn>&nbsp;<var><samp>array</samp></var></dt>
+<!-- rev -->
+<dt><var><samp>array</samp></var>&nbsp;<a name="rev"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/b69ef0dd8a1d6ef4e8b0ee120e1b444966b885a7/lists.ps#L12-L15"><dfn><code>rev</code></dfn></a>&nbsp;<var><samp>array</samp></var></dt>
 <dd>Return a copy of an array in reverse order:
 
 ```postscript
@@ -67,17 +73,9 @@ rev % => [3 2 1]
 
 </dd>
 
-<dt><a name="prepend"><var><samp>array</samp></var>&nbsp;<var><samp>value</samp></var>&nbsp;<dfn><code>prepend</code></dfn>&nbsp;<var><samp>array</samp></var></dt>
-<dd>Prepend a value to an array:
-
-```postscript
-[ 1 2 3 ]
-4 prepend % => 4 1 2 3
-```
-
-</dd>
-
-<dt><a name="append"><var><samp>array</samp></var>&nbsp;<var><samp>value</samp></var>&nbsp;<dfn><code>append</code></dfn>&nbsp;<var><samp>array</samp></var></dt>
+<!-- append -->
+<dt><var><samp>array</samp></var>&nbsp;<var><samp>value</samp></var>&nbsp;<a name="append"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/b69ef0dd8a1d6ef4e8b0ee120e1b444966b885a7/lists.ps#L17-L24"><dfn><code>append</code></dfn></a>&nbsp;<var><samp>array</samp></var></dt>
 <dd>Append a value to an array:
 
 ```postscript
@@ -85,11 +83,26 @@ rev % => [3 2 1]
 4 append % => 1 2 3 4
 ```
 
+</dd>
+
+<!-- prepend -->
+<dt><var><samp>array</samp></var>&nbsp;<var><samp>value</samp></var>&nbsp;<a name="prepend"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/b69ef0dd8a1d6ef4e8b0ee120e1b444966b885a7/lists.ps#L26-L33"><dfn><code>prepend</code></dfn></a>&nbsp;<var><samp>array</samp></var></dt>
+<dd>Prepend a value to an array:
+
+```postscript
+[ 1 2 3 ]
+4 prepend % => 4 1 2 3
+```
+
 </dd></dt>
 
+
 ##### Operand stack manipulation
 
-<dl><dt><a name="nth"><var><samp>any</samp></var>…&nbsp;<var><samp>index</samp></var>&nbsp;<dfn><code>nth</code></dfn> <var><samp>any</samp></var></dt>
+<!-- nth -->
+<dl><dt><var><samp>any</samp></var>…&nbsp;<var><samp>index</samp></var>&nbsp;<a name="nth"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/b69ef0dd8a1d6ef4e8b0ee120e1b444966b885a7/lists.ps#L41-L45"><dfn><code>nth</code></dfn></a>&nbsp;<var><samp>any</samp></var></dt>
 <dd>Return the <var>𝑁<sup>th</sup></var> operand if <var>index</var> is positive, and <var>𝑁<sup>th</sup></var>-last if <var>index</var> is negative:
 
 ```postscript
@@ -106,7 +119,8 @@ This differs from PostScript’s `index` operator in that indices may be negativ
 
 Irrespective of which end is being measured from, offsets that fall outside the operand stack will trigger a `rangecheck`.</dd>
 
-<dt><a name="shift"><var><samp>any</samp></var>&nbsp;<dfn><code>shift</code></dfn>&nbsp;<var>–</any></a></dt>
+<!-- shift -->
+<dt><var><samp>any</samp></var>&nbsp;<a name="shift" href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/b69ef0dd8a1d6ef4e8b0ee120e1b444966b885a7/lists.ps#L47-L50"><dfn><code>shift</code></dfn></a>&nbsp;<var><samp>-</samp></var></dt>
 <dd>Remove the last (left-most) operand from the stack:
 
 ```postscript
@@ -116,7 +130,9 @@ shift % => 2 3 4
 
 Not to be confused with <code>pop</code>, which removes the <em>first</em> operand instead.</dd>
 
-<dt><a name="unshift"><var><samp>any</samp></var>&nbsp;<dfn><code>unshift</code></dfn>&nbsp;<var>–</var></a></dt>
+<!-- unshift -->
+<dt><var><samp>any</samp></var>&nbsp;<a name="unshift"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/b69ef0dd8a1d6ef4e8b0ee120e1b444966b885a7/lists.ps#L52-L55"><dfn><code>unshift</code></dfn></a>&nbsp;<var><samp>-</samp></var></dt>
 <dd>Push an operand onto the end (left-side) of the stack:
 
 ```postscript
@@ -131,8 +147,8 @@ Not to be confused with <code>pop</code>, which removes the <em>first</em> opera
 <footer><aside>
 
 ##### Totes unserious footnotes
-1.&nbsp;<a name="fn-1" href="ref-1">^</a> Yeah, okay, PostScript arrays are fixed-length records, but that still doesn't excuse the lack of operand helpers. Where's GhostScript's [`subr.el`](https://github.com/emacs-mirror/emacs/blob/50512e36c/lisp/subr.el) library, danggit?
+1.&nbsp;<a name="fn-1" href="#ref-1">^</a> Yeah, okay, PostScript arrays are fixed-length records, but that still doesn't excuse the lack of operand helpers. Where's GhostScript's [`subr.el`](https://github.com/emacs-mirror/emacs/blob/50512e36c/lisp/subr.el) library, danggit?
 
-2.&nbsp;<a name="fn-2" href="ref-2">^</a> Yes, this is confusing, I know. [Signed zeroes](https://en.wikipedia.org/wiki/Signed_zero) would’ve been handy here, had PostScript implemented [IEEE&nbsp;754](https://en.wikipedia.org/wiki/IEEE_754) like JavaScript did.
+2.&nbsp;<a name="fn-2" href="#ref-2">^</a> Confusing, I know. [Signed zeroes](https://en.wikipedia.org/wiki/Signed_zero) would’ve been handy here, had PostScript implemented [IEEE&nbsp;754](https://en.wikipedia.org/wiki/IEEE_754) like JavaScript did.
 
 </aside></footer>
