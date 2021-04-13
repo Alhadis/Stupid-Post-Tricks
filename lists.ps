@@ -1,11 +1,55 @@
 %!PS
 
+%%
+%% Section: Array manipulation
+%%
+
 % Retrieve the last element of an array
-/last {
+/last { % <array> last <any>
 	dup length 1 sub get
 } bind def
 
 % Return a copy of an array in reverse order
-/rev {
+/rev { % <array> rev <array>
 	[exch aload pop 2 1 counttomark 2 sub {-1 roll} for]
+} bind def
+
+% Append a value to an array
+/append { % <array> <value> append <array>
+	exch dup length 1 add array
+	dup 4 -1 roll 4 2 roll
+	exch 0 exch
+	putinterval
+	1 index dup length 1 sub 3 -1 roll put
+} bind def
+
+% Prepend a value to an array
+/prepend { % <array> <value> prepend <array>
+	exch
+	dup length 1 add array
+	dup count 1 roll exch 1 exch
+	putinterval
+	exch dup 3 -1 roll 0 exch put
+} bind def
+
+
+
+%%
+%% Section: Operand stack manipulation
+%%
+
+% Return nth operand if index >= 0, nth-last otherwise
+/nth { % <any...> <index> nth <any>
+	dup 0 lt { count add 1 sub } if
+	index
+} bind def
+
+% Remove the last entry on the operand stack
+/shift { % <any> shift -
+	count -1 roll pop
+} bind def
+
+% Push an operand onto the end of the stack
+/unshift { % <any> unshift -
+	count 1 roll
 } bind def
