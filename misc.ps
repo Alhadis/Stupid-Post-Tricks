@@ -1,0 +1,37 @@
+%!PS
+
+% Print an Ascii85-encoded representation of a string
+/=85 { % <string> [<bool>] =85 -
+	dup type /booleantype ne { false } if exch
+
+	(%stdout) (w) file
+		dup (<~) print
+		dup /ASCII85Encode filter
+		dup 6 -1 roll
+		{
+			5 -1 roll dup length exch
+			0 () /SubFileDecode filter
+			/ASCIIHexDecode filter
+			2 -1 roll string readstring pop
+		} { 5 -1 roll } ifelse
+		
+		writestring
+		closefile
+		() = flush
+	closefile
+	pop
+} bind def
+
+% Filter a string with a decoding filter
+/apply-filter { % <string> <name> apply-filter <string>
+	exch dup length exch 0 () /SubFileDecode filter
+	3 -1 roll filter
+	2 -1 roll string readstring pop
+} bind def
+
+% Retrieve the value of a dictionary entry with a default fallback
+/get? { % <dict> <key> <default> get? <any>
+	3 -2 roll
+	2 copy
+	known { get } { 3 -1 roll } ifelse
+} bind def

@@ -41,10 +41,64 @@ Using ===
 	&gt;&gt;
 &gt;&gt;" src="assets/⩶.png" width="356" />
 
-### [`lists.ps`](lists.ps)
-Despite being a stack-based language, PostScript has surprisingly limited functions for manipulating arrays and lists.<a name="ref-1" href="#fn-1"><sup>[1]</sup></a> Those I deem missing will eventually find their way into this file.
 
 <!-- TODO: Find a way to generate the following mess. Preferably using Roff. -->
+
+### [`misc.ps`](misc.ps)
+Various other shite that doesn't belong anywhere else. Even in a repository as eclectic as this one.
+
+<!-- =85 -->
+<dl><dt><var><samp>string</samp></var>&nbsp;<var><samp>bool</samp></var>&nbsp;<a name="&#x3D;85"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/misc.ps#L3-L23"><dfn><code>=85</code></dfn></a>&nbsp;<var><samp>-</samp></var><br/>
+<var><samp>string</samp></var>&nbsp;<dfn><code>=85</code></dfn>&nbsp;<var><samp>-</samp></var></dt>
+<dd>Print an Ascii85-encoded representation of a string:
+
+```postscript
+(ABCD) =85 % => <~5sdq,~>
+```
+
+If the first operand is `true`, the input is treated as an [`/ASCIIHexEncoded`](https://www.adobe.com/content/dam/acom/en/devnet/actionscript/articles/PLRM.pdf#P.130 "ASCIIHexEncode Filter (PostScript Language Reference, 3rd ed., 1999, p. 130)") bytestream, and is decoded as such first:
+
+```postscript
+(ABCD)      true =85 % => <~X3C~>
+(\000\200)  true =85 % => <~!.Y~>
+
+% Whitespace is always ignored
+( AB CD \n) true =85 % => <~X3C~>
+< AB CD >   true =85 % => <~X3C~>
+```
+
+</dd>
+
+<!-- apply-filter -->
+<dt><var><samp>string</samp></var>&nbsp;<var><samp>name</samp></var>&nbsp;<a name="apply-filter"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/misc.ps#L25-L30"><dfn><code>apply-filter</code></dfn></a>&nbsp;<var><samp>string</samp></var></dt>
+<dd>Apply an arbitrary decoding filter to a string:
+
+```postscript
+(48656C6C6F2C20776F726C642E)
+/ASCIIHexDecode apply-filter % => (Hello, world.)
+```
+
+Currently, this doesn't work with encoding filters. See the [red book](https://www.adobe.com/content/dam/acom/en/devnet/actionscript/articles/PLRM.pdf#P.127 "PostScript Language Reference, 3rd ed., 1999, pp. 127-128") for a discussion on filter types.
+
+</dd>
+
+<!-- get? -->
+<dt><var><samp>dict</samp></var>&nbsp;<var><samp>key</samp></var>&nbsp;<var><samp>default</samp></var>&nbsp;<a name="get&#x3F;"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/misc.ps#L32-L37"><dfn><code>get?</code></dfn></a>&nbsp;<var><samp>any</samp></var></dt>
+<dd>Retrieve the value of a dictionary entry, falling back to a default value if no such entry was found:
+
+```postscript
+<< /Foo 1 >> /Foo null get? % => 1
+<< /Foo 1 >> /Bar null get? % => null
+```
+
+</dd></dl>
+
+
+### [`lists.ps`](lists.ps)
+Despite being a stack-based language, PostScript has surprisingly limited functions for manipulating arrays and lists.<a name="ref-1" href="#fn-1"><sup>[1]</sup></a> Those I deem missing will eventually find their way into this file.
 
 
 ##### Array manipulation
