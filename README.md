@@ -17,28 +17,28 @@ Using ==
 -dict-
 Using ===
 &lt;&lt;
-	/FID =&gt; (FontID)
-	/FontBBox =&gt; {
-		-161.0
-		-317.0
-		761.0
-		933.0
-	}
-	/.AGLprocessed~GS &gt; true
-	/PaintType =&gt; 0
-	/FontName =&gt; /Courier
-	/PathLoad =&gt; (/usr/share/ghostscript/9.53.3/Resource/Font/NimbusMonoPS-Regular)
-	/FontInfo =&gt; &lt;&lt;
-		/ItalicAngle =&gt; 0.0
-		/Notice =&gt; ((URW)++,Copyright 2014 by (URW)++ Design &amp; Development)
-		/Weight =&gt; (Regular)
-		/UnderlineThickness =&gt; 51
-		/FamilyName =&gt; (Nimbus Mono PS)
-		/version =&gt; (1.00)
-		/FullName =&gt; (Nimbus Mono PS Regular)
-		/isFixedPitch =&gt; true
-		/UnderlinePosition =&gt; -91
-	&gt;&gt;
+&#x09;/FID =&gt; (FontID)
+&#x09;/FontBBox =&gt; {
+&#x09;&#x09;-161.0
+&#x09;&#x09;-317.0
+&#x09;&#x09;761.0
+&#x09;&#x09;933.0
+&#x09;}
+&#x09;/.AGLprocessed~GS &gt; true
+&#x09;/PaintType =&gt; 0
+&#x09;/FontName =&gt; /Courier
+&#x09;/PathLoad =&gt; (/usr/share/ghostscript/9.53.3/Resource/Font/NimbusMonoPS-Regular)
+&#x09;/FontInfo =&gt; &lt;&lt;
+&#x09;&#x09;/ItalicAngle =&gt; 0.0
+&#x09;&#x09;/Notice =&gt; ((URW)++,Copyright 2014 by (URW)++ Design &amp; Development)
+&#x09;&#x09;/Weight =&gt; (Regular)
+&#x09;&#x09;/UnderlineThickness =&gt; 51
+&#x09;&#x09;/FamilyName =&gt; (Nimbus Mono PS)
+&#x09;&#x09;/version =&gt; (1.00)
+&#x09;&#x09;/FullName =&gt; (Nimbus Mono PS Regular)
+&#x09;&#x09;/isFixedPitch =&gt; true
+&#x09;&#x09;/UnderlinePosition =&gt; -91
+&#x09;&gt;&gt;
 &gt;&gt;" src="assets/⩶.png" width="356" />
 
 
