@@ -9,7 +9,7 @@ Because who doesn't love a good `gs -sDEVICE=txtwrite -sOutputFile=- -q -sBA
 ### [`asciify.ps`](asciify.ps)
 An experiment in monkey-patching fixed-pitch typefaces to use ASCII quotes, instead of their directional Unicode counterparts. Doesn't work in `PSNormalizer.framework` (i.e., macOS/`Preview.app`); requires specific placement after a document's prologue (but before any rendered content).
 
-### [`inspect.ps`](inspect.ps)
+### `inspect.ps` (moved to [`Alhadis/Inspect.ps`][])
 A recursive inspection function that prints spiffy-looking colours to stdout. Basically, what `==` would be if it didn't suck at inspecting substructures:
 
 <img alt="
@@ -40,6 +40,10 @@ Using ===
 &#x09;&#x09;/UnderlinePosition =&gt; -91
 &#x09;&gt;&gt;
 &gt;&gt;" src="assets/⩶.png" width="356" />
+
+`inspect.ps` was originally part of this dumb repository, but later moved to a [dedicated repository][`Alhadis/Inspect.ps`]. I've left this entry intact as an explanation<a name="ref-1" href="#fn-1"><sup>[1]</sup></a> for any readers finding their way here from a link I posted to [Groff's mailing list](https://lists.gnu.org/archive/html/groff/2021-01/msg00085.html).
+
+[`Alhadis/Inspect.ps`]: https://github.com/Alhadis/Inspect.ps
 
 
 <!-- TODO: Find a way to generate the following mess. Preferably using Roff. -->
@@ -98,7 +102,7 @@ href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/misc.ps#L32-L37"
 
 
 ### [`lists.ps`](lists.ps)
-Despite being a stack-based language, PostScript has surprisingly limited functions for manipulating arrays and lists.<a name="ref-1" href="#fn-1"><sup>[1]</sup></a> Those I deem missing will eventually find their way into this file.
+Despite being a stack-based language, PostScript has surprisingly limited functions for manipulating arrays and lists.<a name="ref-2" href="#fn-2"><sup>[2]</sup></a> Those I deem missing will eventually find their way into this file.
 
 
 ##### Array manipulation
@@ -169,7 +173,7 @@ href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/b69ef0dd8a1d6ef4e8b0ee1
 (A)(B)(C)(D) -2 nth % => (A) (B) (C) (D) (B)
 ```
 
-This differs from PostScript’s `index` operator in that indices may be negative (similar to JavaScript’s [`Array.prototype.slice`](https://mdn.io/Array.prototype.slice)). Note that negative offsets are indexed from 1 instead of 0 (which otherwise refers to the first/right-most operand).<a name="ref-2" href="#fn-2"><sup>[2]</sup></a>
+This differs from PostScript’s `index` operator in that indices may be negative (similar to JavaScript’s [`Array.prototype.slice`](https://mdn.io/Array.prototype.slice)). Note that negative offsets are indexed from 1 instead of 0 (which otherwise refers to the first/right-most operand).<a name="ref-3" href="#fn-3"><sup>[3]</sup></a>
 
 Irrespective of which end is being measured from, offsets that fall outside the operand stack will trigger a `rangecheck`.</dd>
 
@@ -201,8 +205,10 @@ href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/b69ef0dd8a1d6ef4e8b0ee1
 <footer><aside>
 
 ##### Totes unserious footnotes
-1.&nbsp;<a name="fn-1" href="#ref-1">^</a> Yeah, okay, PostScript arrays are fixed-length records, but that still doesn't excuse the lack of operand helpers. Where's GhostScript's [`subr.el`](https://github.com/emacs-mirror/emacs/blob/50512e36c/lisp/subr.el) library, danggit?
+1.&nbsp;<a name="fn-1" href="#ref-1">^</a> Also because I don't have the heart to delete that preview image's `alt` text.
 
-2.&nbsp;<a name="fn-2" href="#ref-2">^</a> Confusing, I know. [Signed zeroes](https://en.wikipedia.org/wiki/Signed_zero) would’ve been handy here, had PostScript implemented [IEEE&nbsp;754](https://en.wikipedia.org/wiki/IEEE_754) like JavaScript did.
+2.&nbsp;<a name="fn-2" href="#ref-2">^</a> Yeah, okay, PostScript arrays are fixed-length records, but that still doesn't excuse the lack of operand helpers. Where's GhostScript's [`subr.el`](https://github.com/emacs-mirror/emacs/blob/50512e36c/lisp/subr.el) library, danggit?
+
+3.&nbsp;<a name="fn-3" href="#ref-3">^</a> Confusing, I know. [Signed zeroes](https://en.wikipedia.org/wiki/Signed_zero) would’ve been handy here, had PostScript implemented [IEEE&nbsp;754](https://en.wikipedia.org/wiki/IEEE_754) like JavaScript did.
 
 </aside></footer>
