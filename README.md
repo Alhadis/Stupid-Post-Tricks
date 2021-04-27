@@ -202,6 +202,41 @@ href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/b69ef0dd8a1d6ef4e8b0ee1
 </dl>
 
 
+### [`strings.ps`](strings.ps)
+Procedures for string conversion and manipulation.
+
+<!-- join -->
+<dl><dt><var><samp>array</samp></var>&nbsp;<a name="join"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/strings.ps#L3-L16"><dfn><code>join</code></dfn></a>&nbsp;<var><samp>string</samp></var><br/>
+<var><samp>string</samp></var>&nbsp;<var><samp>string</samp></var>&nbsp;<dfn><code>join</code></dfn>&nbsp;<var><samp>string</samp></var></dt>
+<dd>Concatenate a list of strings:
+
+```postscript
+[ (Foo) (Bar) ] join % => (FooBar)
+[ (A) (B) (C) ] join % => (ABC)
+```
+
+If only two strings are to be concatenated, they can be passed directly as operands:
+
+```postscript
+(Foo) (Bar) join % => (FooBar)
+```
+
+<!-- joind -->
+<dt><var><samp>array</samp></var>&nbsp;<var><samp>delimiter</samp></var>&nbsp;<a name="joind"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/strings.ps#L18-L27"><dfn><code>joind</code></dfn></a>&nbsp;<var><samp>string</samp></var><br/>
+<var><samp>string</samp></var>&nbsp;<var><samp>string</samp></var>&nbsp;<var><samp>delimiter</samp></var>&nbsp;<dfn><code>joind</code></dfn>&nbsp;<var><samp>string</samp></var></dt>
+<dd>Wrapper for <a href="#join"><code>join</code></a> that inserts <var><samp>delimiter</samp></var> between each pair of strings:
+
+```postscript
+[ (A) (B) (C) ]    (, ) joind % => (A, B, C)
+[ (X) (Y) (Z) () ] (;)  joind % => (X;Y;Z;)
+(Foo) (Bar)        (+)  joind % => (Foo+Bar)
+```
+
+</dd></dl>
+
+
 <footer><aside>
 
 ##### Totes unserious footnotes

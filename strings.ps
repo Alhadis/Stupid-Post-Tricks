@@ -1,0 +1,27 @@
+%!PS
+
+% Concatenate a list of strings
+/join { % (<string> <string> | <array>) join <string>
+	dup type /arraytype ne {[exch 3 -1 roll exch]} if
+	<<>> begin
+		/strings exch def
+		/lengths [strings {length} forall] def
+		/result 0 lengths {add} forall string def
+		/offset 0 def
+		strings {
+			dup result offset 3 -1 roll putinterval
+			length offset add /offset exch def
+		} forall
+	result end
+} bind def
+
+% Concatenate a list of strings with a delimiter separating each pair
+/joind { % (<string> <string> | <array>) <delimiter> joind <string>
+	1 index type /stringtype eq {[4 2 roll] exch} if
+	dup length 0 gt {
+		<< /delimiter 3 -1 roll /first? true >> begin
+		[exch {first? {/first? false def} {delimiter exch} ifelse} forall]
+		end
+	} {pop} ifelse
+	join
+} bind def
