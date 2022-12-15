@@ -4,12 +4,12 @@
 	and leaving dark-mode to embedded CSS).
 --><picture>
 	<source media="(prefers-color-scheme: dark)" srcset="assets/simp.svg#dark" />
-	<img align="left" alt="sim.ps" src="assets/simp.svg" width="200" />
+	<img align="left" alt="sim.ps" src="assets/simp.svg" width="190" />
 </picture></a>
 
 # PostScript snippets that I gone and dun.
 
-Because who doesn't love a good `gs -sDEVICE=txtwrite -sOutputFile=- -q -sBATCH -dNOPAUSE -dNOSAFER *.ps`…?
+Because who doesn't love a good `gs -sDEVICE=txtwrite -sOutputFile=- -q -sBATCH -dNOPAUSE -dNOSAFER *.ps`?
 
 <br clear="both" />
 
