@@ -1,0 +1,18 @@
+%!PS
+
+% Compatibility code for PDFMark
+%%BeginProlog
+/pdfmark where
+	{ pop }
+	{
+		/globaldict where
+			{ pop globaldict }
+			{ userdict }
+		ifelse
+		/pdfmark /cleartomark load put
+	} ifelse
+%%EndProlog
+
+% Compatibility code for Distiller-specific operators
+/currentdistillerparams where {pop} {userdict /currentdistillerparams {1 dict} put} ifelse
+/setdistillerparams     where {pop} {userdict /setdistillerparams     {pop}    put} ifelse
