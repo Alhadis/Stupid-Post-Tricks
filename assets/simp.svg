@@ -24,7 +24,10 @@ path, style ~ :not(text){
 	stroke-width: 5;
 	stroke-miterlimit: 50;
 }
+#dark:target + text  { fill: #fff; }
+#dark:target ~ .skin { stroke: #7b1818; }
 </style>
+<g id="dark"/>
 <text x="346.4119" y="294.4527" font-family="'Times-Bold'" font-size="24px">friendship</text>
 <path class="strike" d="M342.1,291.1c18.6-10.4,66.9,8.3,112.8-7.5"/>
 <text transform="matrix(0.9956 -9.394000e-02 9.394000e-02 0.9956 355.2036 326.3049)" fill="#FF0000" font-family="'Times-BoldItalic'" font-size="31.6497px">postscript</text>

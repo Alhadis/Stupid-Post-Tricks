@@ -1,4 +1,11 @@
-<a href="assets/sim.ps"><img align="left" alt="sim.ps" src="assets/simp.svg" width="200" /></a>
+<a href="assets/sim.ps"><!--
+	FIXME: Safari 16 doesn't support media queries embedded in SVGs, whereas
+	other modern browsers do (hence why we aren't using a single image source
+	and leaving dark-mode to embedded CSS).
+--><picture>
+	<source media="(prefers-color-scheme: dark)" srcset="assets/simp.svg#dark" />
+	<img align="left" alt="sim.ps" src="assets/simp.svg" width="200" />
+</picture></a>
 
 # PostScript snippets that I gone and dun.
 
