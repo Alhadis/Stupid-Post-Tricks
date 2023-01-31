@@ -108,6 +108,56 @@ href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/misc.ps#L32-L37"
 </dd></dl>
 
 
+### [`geom.ps`](geom.ps)
+Procedures for plotting simple geometry.
+
+<!-- rect -->
+<dl><dt><var><samp>width</samp></var>&nbsp;<var><samp>height</samp></var>&nbsp;<a name="rect"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/geom.ps#L3-L25"><dfn><code>rect</code></dfn></a>&nbsp;<var><samp>-</samp></var></dt>
+<dd>Draw a rectangle centred at the current point:
+
+```postscript
+100 100 moveto
+50 80 rect
+stroke
+```
+
+</dd>
+
+<!-- circle -->
+<dt><var><samp>radius</samp></var>&nbsp;<a name="circle"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/geom.ps#L27-L35"><dfn><code>circle</code></dfn></a>&nbsp;<var><samp>-</samp></var></dt>
+<dd>Draw a circle centred at the current point:
+
+```postscript
+100 100 moveto
+10 circle
+fill
+```
+
+</dd>
+
+<!-- polygon -->
+<dt>[<var><samp>xRadius</samp></var>&nbsp;<var><samp>YRadius</samp></var>]&nbsp;<var><samp>sides</samp></var>&nbsp;<a name="polygon"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/geom.ps#L37-L62"><dfn><code>polygon</code></dfn></a>&nbsp;<var><samp>-</samp></var><br/>
+<var><samp>radius</samp></var>&nbsp;<var><samp>sides</samp></var>&nbsp;<dfn><code>polygon</code></dfn>&nbsp;<var><samp>-</samp></var></dt>
+<dd>Draw an <var>𝑁</var>-sided polygon centred at the current point:
+	
+```postscript
+% Draw a 100×60-sized hexagon
+100 100 moveto
+[100 60] 6 polygon
+stroke
+
+% Draw a solid-filled triangle
+100 100 moveto
+50 3 polygon
+fill
+```
+
+</dd></dl>
+
+
 ### [`lists.ps`](lists.ps)
 Despite being a stack-based language, PostScript has surprisingly limited functions for manipulating arrays and lists.<a name="ref-2" href="#fn-2"><sup>[2]</sup></a> Those I deem missing will eventually find their way into this file.
 
