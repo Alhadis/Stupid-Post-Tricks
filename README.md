@@ -48,7 +48,7 @@ Using ===
 &#x09;&gt;&gt;
 &gt;&gt;" src="assets/⩶.png" width="356" />
 
-`inspect.ps` was originally part of this dumb repository, but later moved to a [dedicated repository][`Alhadis/Inspect.ps`]. I've left this entry intact as an explanation<a name="ref-1" href="#fn-1"><sup>[1]</sup></a> for any readers finding their way here from a link I posted to [Groff's mailing list](https://lists.gnu.org/archive/html/groff/2021-01/msg00085.html).
+`inspect.ps` was originally part of this dumb repository, but later moved to a [dedicated repository][`Alhadis/Inspect.ps`]. I've left this entry intact as an explanation<sup class="footnote-ref"><a href="#fn-1" id="fnref-1" data-footnote-ref>1</a></sup> for any readers finding their way here from a link I posted to [Groff's mailing list](https://lists.gnu.org/archive/html/groff/2021-01/msg00085.html).
 
 [`Alhadis/Inspect.ps`]: https://github.com/Alhadis/Inspect.ps
 
@@ -159,7 +159,7 @@ fill
 
 
 ### [`lists.ps`](lists.ps)
-Despite being a stack-based language, PostScript has surprisingly limited functions for manipulating arrays and lists.<a name="ref-2" href="#fn-2"><sup>[2]</sup></a> Those I deem missing will eventually find their way into this file.
+Despite being a stack-based language, PostScript has surprisingly limited functions for manipulating arrays and lists.<sup class="footnote-ref"><a href="#fn-2" id="fnref-2" data-footnote-ref>2</a></sup> Those I deem missing will eventually find their way into this file.
 
 
 ##### Array manipulation
@@ -230,7 +230,7 @@ href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/b69ef0dd8a1d6ef4e8b0ee1
 (A)(B)(C)(D) -2 nth % => (A) (B) (C) (D) (B)
 ```
 
-This differs from PostScript’s `index` operator in that indices may be negative (similar to JavaScript’s [`Array.prototype.slice`](https://mdn.io/Array.prototype.slice)). Note that negative offsets are indexed from 1 instead of 0 (which otherwise refers to the first/right-most operand).<a name="ref-3" href="#fn-3"><sup>[3]</sup></a>
+This differs from PostScript’s `index` operator in that indices may be negative (similar to JavaScript’s [`Array.prototype.slice`](https://mdn.io/Array.prototype.slice)). Note that negative offsets are indexed from 1 instead of 0 (which otherwise refers to the first/right-most operand).<sup class="footnote-ref"><a href="#fn-3" id="fnref-3" data-footnote-ref>3</a></sup>
 
 Irrespective of which end is being measured from, offsets that fall outside the operand stack will trigger a `rangecheck`.</dd>
 
@@ -297,10 +297,12 @@ href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/strings.ps#L18-L
 <footer><aside>
 
 ##### Totes unserious footnotes
-1.&nbsp;<a name="fn-1" href="#ref-1">^</a> Also because I don't have the heart to delete that preview image's `alt` text.
-
-2.&nbsp;<a name="fn-2" href="#ref-2">^</a> Yeah, okay, PostScript arrays are fixed-length records, but that still doesn't excuse the lack of operand helpers. Where's GhostScript's [`subr.el`](https://github.com/emacs-mirror/emacs/blob/50512e36c/lisp/subr.el) library, danggit?
-
-3.&nbsp;<a name="fn-3" href="#ref-3">^</a> Confusing, I know. [Signed zeroes](https://en.wikipedia.org/wiki/Signed_zero) would’ve been handy here, had PostScript implemented [IEEE&nbsp;754](https://en.wikipedia.org/wiki/IEEE_754) like JavaScript did.
+<section class="footnotes" data-footnotes>
+<ol>
+	<li id="fn-1">Also because I don't have the heart to delete that preview image's <code>alt</code> text. <a href="#fnref-1" class="footnote-backref" data-footnote-backref>↩</a></li>
+	<li id="fn-2">Yeah, okay, PostScript arrays are fixed-length records, but that still doesn't excuse the lack of operand helpers. Where's GhostScript's <a href="https://github.com/emacs-mirror/emacs/blob/50512e36c/lisp/subr.el"><code>subr.el</code></a> library, danggit? <a href="#fnref-2" class="footnote-backref" data-footnote-backref>↩</a></li>
+	<li id="fn-3">Confusing, I know. <a href="https://en.wikipedia.org/wiki/Signed_zero">Signed zeroes</a> would’ve been handy here, had PostScript implemented <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE&nbsp;754</a> like JavaScript did. <a href="#fnref-3" class="footnote-backref" data-footnote-backref>↩</a></li>
+</ol>
+</section>
 
 </aside></footer>
