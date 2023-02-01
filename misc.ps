@@ -35,3 +35,10 @@
 	2 copy
 	known { get } { 3 -1 roll } ifelse
 } bind def
+
+% Return true if argument is an integer or real
+/numeric? { % <any> numeric? <bool>
+	type dup
+	/integertype eq exch
+	/realtype eq or
+} bind def

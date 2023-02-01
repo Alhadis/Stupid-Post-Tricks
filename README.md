@@ -105,6 +105,19 @@ href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/misc.ps#L32-L37"
 << /Foo 1 >> /Bar null get? % => null
 ```
 
+</dd>
+
+<!-- numeric? -->
+<dt><var><samp>any</samp></var>&nbsp;<a name="numeric&#x3F;"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/misc.ps#L39-L44"><dfn><code>numeric?</code></dfn></a>&nbsp;<var><samp>bool</samp></var></dt>
+<dd>Return a boolean indicating whether argument is an integer or real:
+
+```postscript
+256 numeric? % => true
+1.5 numeric? % => true
+(1) numeric? % => false
+```
+
 </dd></dl>
 
 
