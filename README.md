@@ -118,6 +118,18 @@ href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/misc.ps#L39-L44"
 (1) numeric? % => false
 ```
 
+</dd>
+
+<!-- pagesize -->
+<dt><var><samp>-</samp></var>&nbsp;<a name="pagesize"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/misc.ps#L46-L52"><dfn><code>pagesize</code></dfn></a>&nbsp;<var><samp>width</samp></var>&nbsp;<var><samp>height</samp></var></dt>
+<dd>Ascertain the physical dimensions of the device's printing area:
+
+```postscript
+% When printing A4-sized pages:
+pagesize % => 595.0 842.0
+```
+
 </dd></dl>
 
 

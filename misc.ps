@@ -42,3 +42,11 @@
 	/integertype eq exch
 	/realtype eq or
 } bind def
+
+% Ascertain the physical dimensions of the current page
+/pagesize { % - pagesize <width> <height>
+	currentpagedevice dup begin /PageSize known
+		{/PageSize load aload pop}
+		{gsave newpath clippath pathbbox exch 4 -1 roll add 3 1 roll add grestore}
+	ifelse end
+} bind def
