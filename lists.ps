@@ -35,6 +35,40 @@
 
 
 %%
+%% Section: Dictionary manipulation
+%%
+
+% Return a dictionary's keys as an array
+/keys { % <dict> keys <array>
+	begin
+	currentdict {pop} forall
+	currentdict length array astore
+	end
+} bind def
+
+% Return a dictionary's values as an array
+/values { % <dict> values <array>
+	begin
+	currentdict {exch pop} forall
+	currentdict length array astore
+	end
+} bind def
+
+% Return a copy of a dictionary with its keys and values swapped
+/flip { % <dict> flip <dict>
+	dup length dict exch
+	begin
+	currentdict {
+		exch
+		2 index 3 1 roll
+		put
+	} forall
+	end
+} bind def
+
+
+
+%%
 %% Section: Operand stack manipulation
 %%
 

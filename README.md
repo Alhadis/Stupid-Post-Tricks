@@ -191,7 +191,7 @@ Despite being a stack-based language, PostScript has surprisingly limited functi
 
 <!-- last -->
 <dl><dt><var><samp>array</samp></var>&nbsp;<a name="last"
-href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/b69ef0dd8a1d6ef4e8b0ee120e1b444966b885a7/lists.ps#L7-L10"><dfn><code>last</code></dfn></a>&nbsp;<var><samp>any</samp></var></dt>
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/lists.ps#L7-L10"><dfn><code>last</code></dfn></a>&nbsp;<var><samp>any</samp></var></dt>
 <dd>Retrieve the last element of an array:
 
 ```postscript
@@ -203,7 +203,7 @@ last % => 1
 
 <!-- rev -->
 <dt><var><samp>array</samp></var>&nbsp;<a name="rev"
-href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/b69ef0dd8a1d6ef4e8b0ee120e1b444966b885a7/lists.ps#L12-L15"><dfn><code>rev</code></dfn></a>&nbsp;<var><samp>array</samp></var></dt>
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/lists.ps#L12-L15"><dfn><code>rev</code></dfn></a>&nbsp;<var><samp>array</samp></var></dt>
 <dd>Return a copy of an array in reverse order:
 
 ```postscript
@@ -215,7 +215,7 @@ rev % => [3 2 1]
 
 <!-- append -->
 <dt><var><samp>array</samp></var>&nbsp;<var><samp>value</samp></var>&nbsp;<a name="append"
-href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/b69ef0dd8a1d6ef4e8b0ee120e1b444966b885a7/lists.ps#L17-L24"><dfn><code>append</code></dfn></a>&nbsp;<var><samp>array</samp></var></dt>
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/lists.ps#L17-L24"><dfn><code>append</code></dfn></a>&nbsp;<var><samp>array</samp></var></dt>
 <dd>Append a value to an array:
 
 ```postscript
@@ -227,7 +227,7 @@ href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/b69ef0dd8a1d6ef4e8b0ee1
 
 <!-- prepend -->
 <dt><var><samp>array</samp></var>&nbsp;<var><samp>value</samp></var>&nbsp;<a name="prepend"
-href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/b69ef0dd8a1d6ef4e8b0ee120e1b444966b885a7/lists.ps#L26-L33"><dfn><code>prepend</code></dfn></a>&nbsp;<var><samp>array</samp></var></dt>
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/lists.ps#L26-L33"><dfn><code>prepend</code></dfn></a>&nbsp;<var><samp>array</samp></var></dt>
 <dd>Prepend a value to an array:
 
 ```postscript
@@ -235,14 +235,53 @@ href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/b69ef0dd8a1d6ef4e8b0ee1
 4 prepend % => 4 1 2 3
 ```
 
-</dd></dt>
+</dd></dl>
+
+
+##### Dictionary manipulation
+
+<!-- keys -->
+<dl><dt><var><samp>dict</samp></var>&nbsp;<a name="keys"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/lists.ps#L41-L47"><dfn><code>keys</code></dfn></a>&nbsp;<var><samp>array</samp></var></dt>
+<dd>Return a dictionary's keys as an array:
+
+```postscript
+<< /yes true /no false >>
+keys % => [/yes /no]
+```
+
+</dd>
+
+<!-- values -->
+<dl><dt><var><samp>dict</samp></var>&nbsp;<a name="values"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/lists.ps#L49-L55"><dfn><code>values</code></dfn></a>&nbsp;<var><samp>array</samp></var></dt>
+<dd>Return a dictionary's values as an array:
+
+```postscript
+<< /yes true /no false >>
+values % => [true false]
+```
+
+</dd>
+
+<!-- flip -->
+<dl><dt><var><samp>dict</samp></var>&nbsp;<a name="flip"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/lists.ps#L57-L67"><dfn><code>values</code></dfn></a>&nbsp;<var><samp>dict</samp></var></dt>
+<dd>Return a copy of a dictionary with its keys and values swapped:
+	
+```postscript
+<< /width 640 /height 480 >>
+flip % => << 640 /width 480 /height >>
+```
+
+</dd></dl>
 
 
 ##### Operand stack manipulation
 
 <!-- nth -->
 <dl><dt><var><samp>any</samp></var>…&nbsp;<var><samp>index</samp></var>&nbsp;<a name="nth"
-href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/b69ef0dd8a1d6ef4e8b0ee120e1b444966b885a7/lists.ps#L41-L45"><dfn><code>nth</code></dfn></a>&nbsp;<var><samp>any</samp></var></dt>
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/lists.ps#L75-L79"><dfn><code>nth</code></dfn></a>&nbsp;<var><samp>any</samp></var></dt>
 <dd>Return the <var>𝑁<sup>th</sup></var> operand if <var>index</var> is positive, and <var>𝑁<sup>th</sup></var>-last if <var>index</var> is negative:
 
 ```postscript
@@ -260,7 +299,8 @@ This differs from PostScript’s `index` operator in that indices may be negativ
 Irrespective of which end is being measured from, offsets that fall outside the operand stack will trigger a `rangecheck`.</dd>
 
 <!-- shift -->
-<dt><var><samp>any</samp></var>&nbsp;<a name="shift" href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/b69ef0dd8a1d6ef4e8b0ee120e1b444966b885a7/lists.ps#L47-L50"><dfn><code>shift</code></dfn></a>&nbsp;<var><samp>-</samp></var></dt>
+<dt><var><samp>any</samp></var>&nbsp;<a name="shift"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/lists.ps#L81-L84"><dfn><code>shift</code></dfn></a>&nbsp;<var><samp>-</samp></var></dt>
 <dd>Remove the last (left-most) operand from the stack:
 
 ```postscript
@@ -272,7 +312,7 @@ Not to be confused with <code>pop</code>, which removes the <em>first</em> opera
 
 <!-- unshift -->
 <dt><var><samp>any</samp></var>&nbsp;<a name="unshift"
-href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/b69ef0dd8a1d6ef4e8b0ee120e1b444966b885a7/lists.ps#L52-L55"><dfn><code>unshift</code></dfn></a>&nbsp;<var><samp>-</samp></var></dt>
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/lists.ps#L86-L89"><dfn><code>unshift</code></dfn></a>&nbsp;<var><samp>-</samp></var></dt>
 <dd>Push an operand onto the end (left-side) of the stack:
 
 ```postscript
@@ -280,8 +320,7 @@ href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/b69ef0dd8a1d6ef4e8b0ee1
 4 unshift % => 4 1 2 3
 ```
 
-</dd>
-</dl>
+</dd></dl>
 
 
 ### [`strings.ps`](strings.ps)
