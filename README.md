@@ -278,7 +278,7 @@ entries % => [/yes true /no false]
 
 <!-- flip -->
 <dl><dt><var><samp>dict</samp></var>&nbsp;<a name="flip"
-href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/lists.ps#L65-L75"><dfn><code>values</code></dfn></a>&nbsp;<var><samp>dict</samp></var></dt>
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/lists.ps#L65-L75"><dfn><code>flip</code></dfn></a>&nbsp;<var><samp>dict</samp></var></dt>
 <dd>Return a copy of a dictionary with its keys and values swapped:
 	
 ```postscript
