@@ -167,7 +167,7 @@ fill
 href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/geom.ps#L37-L62"><dfn><code>polygon</code></dfn></a>&nbsp;<var><samp>-</samp></var><br/>
 <var><samp>radius</samp></var>&nbsp;<var><samp>sides</samp></var>&nbsp;<dfn><code>polygon</code></dfn>&nbsp;<var><samp>-</samp></var></dt>
 <dd>Draw an <var>𝑁</var>-sided polygon centred at the current point:
-	
+
 ```postscript
 % Draw a 100×60-sized hexagon
 100 100 moveto
@@ -280,7 +280,7 @@ entries % => [/yes true /no false]
 <dl><dt><var><samp>dict</samp></var>&nbsp;<a name="flip"
 href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/lists.ps#L65-L75"><dfn><code>flip</code></dfn></a>&nbsp;<var><samp>dict</samp></var></dt>
 <dd>Return a copy of a dictionary with its keys and values swapped:
-	
+
 ```postscript
 << /width 640 /height 480 >>
 flip % => << 640 /width 480 /height >>
