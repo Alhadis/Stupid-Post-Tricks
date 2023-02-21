@@ -130,6 +130,34 @@ href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/misc.ps#L46-L52"
 pagesize % => 595.0 842.0
 ```
 
+</dd>
+
+<!-- bboxsize -->
+<dt><var><samp>llx</samp></var>&nbsp;<var><samp>lly</samp></var>&nbsp;<var><samp>urx</samp></var>&nbsp;<var><samp>ury</samp></var>&nbsp;<a name="bboxsize"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/misc.ps#L54-L57"><dfn><code>bboxsize</code></dfn></a>&nbsp;<var><samp>width</samp></var>&nbsp;<var><samp>height</samp></var></dt>
+<dd>Resolve the dimensions of a bounding box returned from <code>pathbbox</code> or <a href="#measuretext"><code>measuretext</code></a>:
+
+```postscript
+0 0 moveto
+/Times-Roman findfont 10 scalefont setfont
+(Hello, world.) measuretext bboxsize
+% => 52.1602 8.21875
+```
+
+</dd>
+
+<!-- measuretext -->
+<dt><var><samp>string</samp></var>&nbsp;<a name="measuretext"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/misc.ps#L59-L64"><dfn><code>measuretext</code></dfn></a>&nbsp;<var><samp>llx</samp></var>&nbsp;<var><samp>lly</samp></var>&nbsp;<var><samp>urx</samp></var>&nbsp;<var><samp>ury</samp></var></dt>
+<dd>Compute the bounding box for the given string, expressed as the Cartesian coordinates for a rectangle's lower-left and upper-right corners.
+
+```postscript
+0 0 moveto
+/Times-Roman findfont 10 scalefont setfont
+(Hello, world.) measuretext
+% => 0.1875 -1.40625 52.3477 6.8125
+```
+
 </dd></dl>
 
 

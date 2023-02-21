@@ -50,3 +50,15 @@
 		{gsave newpath clippath pathbbox exch 4 -1 roll add 3 1 roll add grestore}
 	ifelse end
 } bind def
+
+% Resolve the dimensions of a bounding box
+/bboxsize { % <llx> <lly> <urx> <ury> bboxsize <width> <height>
+	exch 4 -1 roll sub exch 3 -1 roll sub
+} bind def
+
+% Compute the bounding box for the given string
+/measuretext { % <string> measuretext llx lly urx ury
+	currentpoint gsave newpath moveto
+	false charpath flattenpath pathbbox
+	grestore
+} bind def
