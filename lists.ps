@@ -54,6 +54,14 @@
 	end
 } bind def
 
+% Return a dictionary's concatenated key/value pairs as an array
+/entries { % <dict> entries <array>
+	begin
+	currentdict {} forall
+	currentdict length 2 mul array astore
+	end
+} bind def
+
 % Return a copy of a dictionary with its keys and values swapped
 /flip { % <dict> flip <dict>
 	dup length dict exch

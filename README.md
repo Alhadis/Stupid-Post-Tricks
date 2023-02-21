@@ -264,9 +264,21 @@ values % => [true false]
 
 </dd>
 
+<!-- entries -->
+<dl><dt><var><samp>dict</samp></var>&nbsp;<a name="entries"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/lists.ps#L57-L63"><dfn><code>entries</code></dfn></a>&nbsp;<var><samp>array</samp></var></dt>
+<dd>Return a dictionary's concatenated key/value pairs as an array:
+
+```postscript
+<< /yes true /no false >>
+entries % => [/yes true /no false]
+```
+
+</dd>
+
 <!-- flip -->
 <dl><dt><var><samp>dict</samp></var>&nbsp;<a name="flip"
-href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/lists.ps#L57-L67"><dfn><code>values</code></dfn></a>&nbsp;<var><samp>dict</samp></var></dt>
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/lists.ps#L65-L75"><dfn><code>values</code></dfn></a>&nbsp;<var><samp>dict</samp></var></dt>
 <dd>Return a copy of a dictionary with its keys and values swapped:
 	
 ```postscript
@@ -281,7 +293,7 @@ flip % => << 640 /width 480 /height >>
 
 <!-- nth -->
 <dl><dt><var><samp>any</samp></var>…&nbsp;<var><samp>index</samp></var>&nbsp;<a name="nth"
-href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/lists.ps#L75-L79"><dfn><code>nth</code></dfn></a>&nbsp;<var><samp>any</samp></var></dt>
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/lists.ps#L83-L87"><dfn><code>nth</code></dfn></a>&nbsp;<var><samp>any</samp></var></dt>
 <dd>Return the <var>𝑁<sup>th</sup></var> operand if <var>index</var> is positive, and <var>𝑁<sup>th</sup></var>-last if <var>index</var> is negative:
 
 ```postscript
@@ -300,7 +312,7 @@ Irrespective of which end is being measured from, offsets that fall outside the 
 
 <!-- shift -->
 <dt><var><samp>any</samp></var>&nbsp;<a name="shift"
-href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/lists.ps#L81-L84"><dfn><code>shift</code></dfn></a>&nbsp;<var><samp>-</samp></var></dt>
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/lists.ps#L89-L92"><dfn><code>shift</code></dfn></a>&nbsp;<var><samp>-</samp></var></dt>
 <dd>Remove the last (left-most) operand from the stack:
 
 ```postscript
@@ -312,7 +324,7 @@ Not to be confused with <code>pop</code>, which removes the <em>first</em> opera
 
 <!-- unshift -->
 <dt><var><samp>any</samp></var>&nbsp;<a name="unshift"
-href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/lists.ps#L86-L89"><dfn><code>unshift</code></dfn></a>&nbsp;<var><samp>-</samp></var></dt>
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/lists.ps#L94-L97"><dfn><code>unshift</code></dfn></a>&nbsp;<var><samp>-</samp></var></dt>
 <dd>Push an operand onto the end (left-side) of the stack:
 
 ```postscript
