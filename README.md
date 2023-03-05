@@ -13,9 +13,6 @@ Because who doesn't love a good `gs -sDEVICE=txtwrite -sOutputFile=- -q -sBA
 
 <br clear="both" />
 
-### [`asciify.ps`](asciify.ps)
-An experiment in monkey-patching fixed-pitch typefaces to use ASCII quotes, instead of their directional Unicode counterparts. Doesn't work in `PSNormalizer.framework` (i.e., macOS/`Preview.app`); requires specific placement after a document's prologue (but before any rendered content).
-
 ### `inspect.ps` (moved to [`Alhadis/Inspect.ps`][])
 A recursive inspection function that prints spiffy-looking colours to stdout. Basically, what `==` would be if it didn't suck at inspecting substructures:
 
