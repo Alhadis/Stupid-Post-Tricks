@@ -158,7 +158,37 @@ href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/misc.ps#L59-L64"
 % => 0.1875 -1.40625 52.3477 6.8125
 ```
 
-</dd></dl>
+</dd>
+
+<!-- concatprocs -->
+<dt><var><samp>array</samp></var>&nbsp;<a name="concatprocs"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/misc.ps#L66-L73"><dfn><code>concatprocs</code></dfn></a>&nbsp;<var><samp>proc</samp></var></dt>
+<dd>Construct a procedure by concatenating the bodies of smaller procedures. For example, to “monkey-patch” a procedure named <code>callback</code>, use: <table width="100%"><thead><tr><th
+	>Source</th><th
+	>Output</th>
+</tr></thead><tbody><tr><td valign="top" width="50%">
+
+```postscript
+/callback {…} def
+[
+	{[/foo /bar /baz] before}
+	/callback load
+	{after}
+] concatprocs bind
+```
+
+</td><td valign="top" width="50%">
+
+~~~postscript
+{
+	[/foo /bar /baz]
+	before
+	…
+	after
+}
+~~~
+
+</td></tr></tbody></table></dd></dl>
 
 
 ### [`geom.ps`](geom.ps)

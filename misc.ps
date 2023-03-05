@@ -62,3 +62,12 @@
 	false charpath flattenpath pathbbox
 	grestore
 } bind def
+
+% Construct a procedure from the bodies of smaller procedures
+/concatprocs { % <array> concatprocs <proc>
+	dup
+	0 exch {length add} forall
+	array exch
+	{aload length 1 add -1 roll} forall
+	astore cvx
+} bind def
