@@ -422,6 +422,26 @@ href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/strings.ps#L18-L
 (Foo) (Bar)        (+)  joind % => (Foo+Bar)
 ```
 
+<!-- chr -->
+<dt><var><samp>int</samp></var>&nbsp;<a name="chr"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/strings.ps#L29-L33"><dfn><code>chr</code></dfn></a>&nbsp;<var><samp>string</samp></var></dt>
+<dd>Return a single-character string with the given codepoint:
+
+```postscript
+4 chr % => (\004)
+9 chr % => (\t)
+```
+
+<!-- ord -->
+<dt><var><samp>string</samp></var>&nbsp;<a name="ord"
+href="https://github.com/Alhadis/Stupid-Post-Tricks/blob/master/strings.ps#L35-L38"><dfn><code>ord</code></dfn></a>&nbsp;<var><samp>int</samp></var></dt>
+<dd>Return the codepoint of <var><samp>string</samp></var>'s first character, or <tt>0</tt> if the string is empty:
+
+```postscript
+(ABC) ord % => 65
+()    ord % => 0
+```
+
 </dd></dl>
 
 

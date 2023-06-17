@@ -25,3 +25,14 @@
 	} {pop} ifelse
 	join
 } bind def
+
+% Return a single-character string with the given codepoint
+/chr { % <int> chr <string>
+	1 string dup
+	3 -1 roll 0 exch put
+} bind def
+
+% Return the codepoint of a string's first character
+/ord { % <string> ord <int>
+	dup length 0 eq {pop 0} {0 get} ifelse
+} bind def
